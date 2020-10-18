@@ -83,6 +83,9 @@ App = {
     // Load token sale contract
     App.contracts.DappTokenSale.deployed().then(function(instance) {
       dappTokenSaleInstance = instance;
+      App.loading = false;
+        loader.hide();
+        content.show();
       return dappTokenSaleInstance.tokenPrice();
     }).then(function(tokenPrice) {
       App.tokenPrice = tokenPrice;
